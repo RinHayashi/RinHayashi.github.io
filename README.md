@@ -140,13 +140,13 @@ These are the basic YAML parameters that you are most likely to use on most page
 
 Parameter   | Description
 ----------- | -----------
-title       | Page or blog post title
-subtitle    | Short description of page or blog post that goes under the title
-tags        | List of tags to categorize the post. Separate the tags with commas and place them inside square brackets. Example: `[personal, analysis, finance]`
-cover-img   | Include a large full-width image at the top of the page. You can either provide the path to a single image (eg. `"/path/to/img"`) , or a list of images to cycle through (eg. `["/path/img1", "/path/img2"]`). If you want to add a caption to an image, then you must use the list notation (use `[]` even if you have only one image), and each image should be provided as `"/path/to/img" : "Caption of image"`.
-thumbnail-img | For blog posts, if you want to add a thumbnail that will show up in the feed, use `thumbnail-img: /path/to/image`. If no thumbnail is provided, then `cover-img` will be used as the thumbnail. You can use `thumbnail-img: ""` to disable a thumbnail.
-comments    | If you want do add comments to a specific page, use `comments: true`. Comments only work if you enable one of the comments providers (Facebook, disqus, staticman, utterances, giscus, CommentBox) in `_config.yml` file. Comments are automatically enabled on blog posts but not on other pages; to turn comments off for a specific post, use `comments: false`.
-mathjax     | If you want to use LaTeX formulas, you need to enable MathJax. Note that in MathJax you need to use `$$` and `\\(` to start and end expressions
+title       | 页面或博客文章的标题
+subtitle    | 标题下方的简短描述
+tags        | 给文章分类的标签列表。标签之间用英文逗号分隔，并放在方括号中，例如：`[personal, analysis, finance]`
+cover-img   | 在页面顶部插入一张宽幅的大图。你可以填写一张图片的路径（如："/path/to/img"），也可以提供一组图片轮播（如：`["/path/img1", "/path/img2"]`）。如果你想为图片添加说明文字，必须使用列表格式（即使只有一张图也要使用 `[]`），并用如下格式书写：`"/path/to/img" : "图片说明"`
+thumbnail-img | （仅限博客文章）如果你想为文章添加缩略图（会在博客文章列表中显示），请使用 thumbnail-img: /path/to/image。如果没有指定缩略图，则会使用 cover-img。你也可以使用 thumbnail-img: "" 禁用缩略图显示。
+comments    | 如果你希望某个页面开启评论功能，使用 comments: true。评论功能依赖你在 _config.yml 文件中启用了某个评论系统（如 Facebook、disqus、staticman、utterances、giscus、CommentBox）。博客文章默认开启评论，普通页面默认关闭；如需关闭某篇文章的评论，使用 comments: false。
+mathjax     | 如果你想在页面中使用 LaTeX 数学公式，需要启用 MathJax。注意在 MathJax 中使用 `$$` 或 `\\(` 来包围公式内容。
 
 ## Parameters for SEO and social media sharing
 
