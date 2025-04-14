@@ -1,0 +1,14 @@
+- id: 001
+  name: "Kyle"
+  avatar: "/assets/characters/avatar/001kyle.jpg"
+  url: "/characters/001kyle/"
+
+- id: 002
+  name: "时雨"
+  avatar: "/assets/characters/avatar/002shigure.jpg"
+  url: "/characters/002shigure/"
+
+# 继续添加角色...
+# 可以自定义角色的字段
+# avatar-头像；tachie-立绘；portrait-肖像
+# url-详情页链接
