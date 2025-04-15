@@ -10,10 +10,10 @@
 ############################
 
 # Name of website
-title: My website
+title: 群星の揺り籠
 
 # Your name to show in the footer
-author: Routa
+author: Lucius Rumann
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -56,8 +56,8 @@ social-network-links:
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
 #  facebook: deanattali
 #  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
+  twitter: RinHayashi6
+#  patreon: DeanAttali
 #  youtube: "@daattali"
 #  whatsapp: 15551212
 #  medium: yourname
@@ -79,16 +79,16 @@ social-network-links:
 #  ORCID: your ORCID ID
 #  google-scholar: your google scholar
 #  discord: "invite_code" or "users/userid" or "invite/invite_code"
-  kaggle: yourname
+#  kaggle: yourname
 #  hackerrank: yourname
 #  gitlab: yourname
-#  itchio: yourname
+  itchio: RinHayashi
 #  untappd: yourname
 #  strava: youruserid
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: 永恒黑夜中的流星尘，某颗星最后的呢喃。
 
 ###########################
 # --- General options --- #
@@ -104,7 +104,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+# url-pretty: "MyWebsite.com"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
