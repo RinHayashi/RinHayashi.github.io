@@ -101,7 +101,7 @@ common-js:
     const numStars = 10;
     for (let i = 0; i < numStars; i++) {
       const star_click = document.createElement("div");
-      star_click.className = "star";
+      star_click.className = "star_click";
       star_click.innerText = "✦";
 
       star_click.style.left = (e.pageX - 8) + "px";
@@ -119,7 +119,7 @@ common-js:
       star_click.style.setProperty('--dx', dx);
       star_click.style.setProperty('--dy', dy);
 
-      document.body.appendChild(star);
+      document.body.appendChild(star_click);
       setTimeout(() => star_click.remove(), 800);
     }
   });
