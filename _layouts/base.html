@@ -37,40 +37,90 @@ common-js:
 
     <!-- 自定义鼠标样式 -->
     <style>
-      body {
+      /* 默认样式 */
+      body, a, button, input, select, textarea {
         cursor: url('/assets/img/saturn-cursor.png'), auto;
       }
+      /* 鼠标悬停在链接时的样式 */
+      a:hover {
+        cursor: url('/assets/img/icons8-planet-50.png'), pointer;
+    }
     </style>
   
-    <!-- 点击爱心动画 -->
-    <script>
-      document.addEventListener('click', function (e) {
-        const heart = document.createElement("div");
-        heart.innerText = "❤";
-        heart.style.position = "absolute";
-        heart.style.left = (e.pageX - 10) + "px";
-        heart.style.top = (e.pageY - 20) + "px";
-        heart.style.fontSize = "24px";
-        heart.style.color = "red";
-        heart.style.pointerEvents = "none";
-        heart.style.animation = "fadeOut 1s ease-out";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 1000);
-      });
-    </script>
-  
-    <style>
-      @keyframes fadeOut {
-        0% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-30px);
-          opacity: 0;
-        }
-      }
-    </style>
+<!-- 拖尾星光爆裂动画（随机颜色） -->
+<style>
+  .star {
+    position: absolute;
+    font-size: 16px;
+    pointer-events: none;
+    opacity: 1;
+    animation: explode 0.8s ease-out forwards;
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+
+  @keyframes explode {
+    0% {
+      transform: scale(1) translate(0, 0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5) translate(var(--dx), var(--dy));
+      opacity: 0;
+    }
+  }
+
+  .star::after {
+    content: "✦";
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    transform: translate(-2px, -2px);
+    filter: blur(1px);
+    animation: trail 0.8s ease-out forwards;
+    color: inherit;
+  }
+
+  @keyframes trail {
+    0% {
+      opacity: 0.5;
+      transform: scale(1) translate(0, 0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.2) translate(var(--dx), var(--dy));
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('click', function (e) {
+    const numStars = 10;
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.innerText = "✦";
+
+      star.style.left = (e.pageX - 8) + "px";
+      star.style.top = (e.pageY - 8) + "px";
+
+      // 设置随机颜色
+      const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`;
+      star.style.color = randomColor;
+
+      // 设置飞行方向
+      const angle = Math.random() * 2 * Math.PI;
+      const distance = Math.random() * 40 + 30;
+      const dx = Math.cos(angle) * distance + "px";
+      const dy = Math.sin(angle) * distance + "px";
+      star.style.setProperty('--dx', dx);
+      star.style.setProperty('--dy', dy);
+
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 800);
+    }
+  });
+</script>
 
 </body>
 </html>
