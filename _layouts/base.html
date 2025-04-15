@@ -21,9 +21,12 @@ common-js:
 
 <!DOCTYPE html>
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
-<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
-{% include head.html %}
-
+<head>
+  <!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+  {% include head.html %}
+  <!-- 引入星空背景的自定义 CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/starry_sky.css" | relative_url }}">
+</head>
 <body>
   {% include gtm_body.html %}
 
@@ -121,6 +124,6 @@ common-js:
     }
   });
 </script>
-
+<script src="{{ "/assets/js/starry_sky.js" | relative_url }}"></script>
 </body>
 </html>
