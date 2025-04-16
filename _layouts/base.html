@@ -42,11 +42,11 @@ common-js:
     <style>
       /* 默认样式 */
       body, a, button, input, select, textarea {
-        cursor: url('/assets/img/saturn-cursor.png'), auto;
+        cursor: url('/assets/img/saturn-cursor-white.png'), auto;
       }
       /* 鼠标悬停在链接时的样式 */
       a:hover {
-        cursor: url('/assets/img/saturn-cursor.png'), pointer;
+        cursor: url('/assets/img/saturn-cursor-white-lightened.png'), pointer;
     }
     </style>
   
@@ -94,10 +94,23 @@ common-js:
       transform: scale(1.2) translate(var(--dx), var(--dy));
     }
   }
+
+  /* 点击动画专属图层，防止滚动条 */
+  #click-star-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+  }
 </style>
 
 <script>
   document.addEventListener('click', function (e) {
+    const layer = document.getElementById('click-star-layer');
     const numStars = 10;
     for (let i = 0; i < numStars; i++) {
       const star_click = document.createElement("div");
@@ -107,11 +120,9 @@ common-js:
       star_click.style.left = (e.pageX - 8) + "px";
       star_click.style.top = (e.pageY - 8) + "px";
 
-      // 设置随机颜色
       const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`;
       star_click.style.color = randomColor;
 
-      // 设置飞行方向
       const angle = Math.random() * 2 * Math.PI;
       const distance = Math.random() * 40 + 30;
       const dx = Math.cos(angle) * distance + "px";
@@ -119,11 +130,15 @@ common-js:
       star_click.style.setProperty('--dx', dx);
       star_click.style.setProperty('--dy', dy);
 
-      document.body.appendChild(star_click);
+      layer.appendChild(star_click);
       setTimeout(() => star_click.remove(), 800);
     }
   });
 </script>
+
+<!-- 添加点击特效的图层 -->
+<div id="click-star-layer"></div>
+
 <script src="{{ "/assets/js/starry_sky.js" | relative_url }}"></script>
 </body>
 </html>
