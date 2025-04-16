@@ -8,15 +8,15 @@ for (let i = 0; i < numStars; i++) {
     star.classList.add('star');
 
     const size = Math.random() * 3 + 1; // 星星大小
-    const x = (Math.random() * 2 - 1) * window.innerWidth; // 随机位置
-    const y = (Math.random() * 2 - 1) * window.innerHeight;
+    const x = Math.random() * window.innerWidth; // 随机位置
+    const y = Math.random() * window.innerHeight;
 
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
     star.style.left = `${x}px`;
     star.style.top = `${y}px`;
 
-    body.appendChild(star);
+    container.appendChild(star);
 
     // 随机动画时长
     star.style.animationDuration = `${Math.random() * 1 + 0.5}s, ${Math.random() * 20 + 10}s`; // 设置随机时长，移动时间增大
