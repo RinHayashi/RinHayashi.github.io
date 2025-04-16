@@ -97,11 +97,11 @@ common-js:
 
   /* 点击动画专属图层，防止滚动条 */
   #click-star-layer {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
     z-index: 9999;
@@ -117,8 +117,8 @@ common-js:
       star_click.className = "star_click";
       star_click.innerText = "✦";
 
-      star_click.style.left = (e.clientX - 8) + "px";
-      star_click.style.top = (e.clientY - 8) + "px";
+      star_click.style.left = (e.pageX - 8) + "px";
+      star_click.style.top = (e.pageY - 8) + "px";
 
       const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`;
       star_click.style.color = randomColor;
