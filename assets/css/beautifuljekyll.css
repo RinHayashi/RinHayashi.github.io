@@ -158,8 +158,9 @@ img {
   font-family: var(--header-font);
   {% if site.navbar-img %}
     background-image: url({{ site.navbar-img | relative_url }});
-    background-size: contain;
-    background-attachment: fixed;
+    background-size: auto 100%;     /* 高度适应，高度100%，宽度自适应 */
+    background-repeat: repeat-x;    /* 水平平铺 */
+    background-position: left center; /* 可选：靠左居中展示 */
   {% endif %}
   -webkit-transition: padding .5s ease-in-out;
   -moz-transition: padding .5s ease-in-out;
