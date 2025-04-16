@@ -1,7 +1,9 @@
 // 本代码来自https://github.com/YaoqxCN/star-sky
 
 const numStars = 300; // 星星数量
-const body = document.body;
+const container = document.createElement("div");
+container.className = "starry-background";
+document.body.appendChild(container); // 先把背景容器放进 body
 
 for (let i = 0; i < numStars; i++) {
     const star = document.createElement('div');
@@ -16,7 +18,7 @@ for (let i = 0; i < numStars; i++) {
     star.style.left = `${x}px`;
     star.style.top = `${y}px`;
 
-    container.appendChild(star);
+    container.appendChild(star); //放进容器而非 body
 
     // 随机动画时长
     star.style.animationDuration = `${Math.random() * 1 + 0.5}s, ${Math.random() * 20 + 10}s`; // 设置随机时长，移动时间增大
