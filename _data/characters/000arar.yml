@@ -1,0 +1,20 @@
+full_name: 亚尔
+fname: 亚
+lname: 尔
+profile_pic: /assets/characters/avatar/000arar.jpg
+subtitle: 梦境中漂流的人
+background: >
+  她是一位沉默寡言的研究员，擅长解析人类的潜意识。
+  曾在梦境管理局服役，现处于失联状态。
+
+dialogues:
+  - “你看到的梦，其实是我为你编织的。”
+  - “梦的尽头，是醒不过来的现实。”
+
+feedback:
+  - content: 她的存在本身就像一场梦。
+    author: 玩家 Beta-1
+  - content: 亚尔是我见过最有深度的角色。
+    author: 内测日志 #42
+
+nav_color: "#3b3f58"
