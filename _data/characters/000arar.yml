@@ -7,6 +7,18 @@ background: >
   她是一位沉默寡言的研究员，擅长解析人类的潜意识。
   曾在梦境管理局服役，现处于失联状态。
 
+details:
+  - label: 性别
+    value: 女
+  - label: 年龄
+    value: 27
+  - label: 初登场章节
+    value: 第一章·坠梦列车
+  - label: 所属组织
+    value: 潜意识研究所
+  - label: 武器
+    value: 记忆干扰器
+
 dialogues:
   - “你看到的梦，其实是我为你编织的。”
   - “梦的尽头，是醒不过来的现实。”
@@ -18,3 +30,4 @@ feedback:
     author: 内测日志 #42
 
 nav_color: "#3b3f58"
+portrait: /assets/characters/portrait/000arar.jpg
